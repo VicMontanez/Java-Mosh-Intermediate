@@ -6,6 +6,9 @@ public class Main {
         int baseSalary = 50_000;
         int extraHours = 10;
         int hourlyRate = 20;
+
+        int wage = calculateWage(baseSalary, extraHours, hourlyRate);
+        System.out.println(wage);
     }
 
     public static int calculateWage(
