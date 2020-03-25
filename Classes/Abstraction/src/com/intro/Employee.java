@@ -4,6 +4,8 @@ public class Employee {
     private int baseSalary;
     private int hourlyRate;
 
+    public static int numberOfEmployees;
+
     //Constructor
     public Employee(int baseSalary) {
         this(baseSalary, 0);
@@ -12,6 +14,7 @@ public class Employee {
     public Employee(int baseSalary, int hourlyRate) {
         setBaseSalary(baseSalary);
         setHourlyRate(hourlyRate);
+        numberOfEmployees++;
     }
 
     public int calculateWage(int extraHours) {
