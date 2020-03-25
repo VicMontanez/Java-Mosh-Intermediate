@@ -8,6 +8,7 @@ public class Main {
 //        browser.navigate("127.0.0");
         var employee = new Employee(50_000, 20);
         System.out.println(Employee.numberOfEmployees);
+        Employee.printNumberOfEmployees();
         int wage = employee.calculateWage();
         System.out.println(wage);
 
