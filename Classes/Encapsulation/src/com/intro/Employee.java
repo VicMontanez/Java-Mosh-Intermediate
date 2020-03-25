@@ -2,8 +2,8 @@ package com.intro;
 
 public class Employee {
 
-    public int baseSalary;
-    public int hourlyRate;
+    private int baseSalary;
+    private int hourlyRate;
 
     public int calculateWage(int extraHours) {
         return baseSalary + (hourlyRate * extraHours);
@@ -17,5 +17,16 @@ public class Employee {
 
     public int getBaseSalary() {
         return baseSalary;
+    }
+
+    public void setHourlyRate(int hourlyRate) {
+        if (hourlyRate <= 0)
+            throw new IllegalArgumentException("Hourly rate can not be less than 0");
+            this.hourlyRate = hourlyRate;
+
+    }
+
+    public int getHourlyRate() {
+        return hourlyRate;
     }
 }
