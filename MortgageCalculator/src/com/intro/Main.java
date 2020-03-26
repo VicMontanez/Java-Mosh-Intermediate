@@ -1,6 +1,5 @@
 package com.intro;
 
-import java.text.NumberFormat;
 
 public class Main {
     //Principal values between 1K - 1M
@@ -14,23 +13,9 @@ public class Main {
         float rate = (float) Console.readNumber("Annual Interest Rate: ", 1, 30);
         int years = (int) Console.readNumber("Period (Years): ", 1, 30);
 
-        double mortgage = calculateMortgage(principal, rate, years);
+        MortgageReport.printMortgage(principal, rate, years);
 
-        String mortgageFormatted = NumberFormat.getCurrencyInstance().format((mortgage));
-        System.out.println();
-        System.out.println("MORTGAGE");
-        System.out.println("--------");
-        System.out.println("Mortgage is: " + mortgageFormatted);
-
-        System.out.println();
-        System.out.println("PAYMENT SCHEDULE");
-        System.out.println("-----------");
-
-        for ( short month = 1; month <= years * 12; month++) {
-            double payments = paymentSchedule(principal, rate, years, month);
-            System.out.println(NumberFormat.getCurrencyInstance().format((payments)));
-
-        }
+        MortgageReport.printPaymentSchedule(principal, rate, years);
     }
 
 
