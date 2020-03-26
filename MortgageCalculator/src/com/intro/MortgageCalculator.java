@@ -1,6 +1,12 @@
 package com.intro;
 
 public class MortgageCalculator {
+    //Principal values between 1K - 1M
+    //Interest rate greater than 0 or less than or equal to 30
+    //Years  value between 1 and 30
+    public final static byte MONTHS_IN_YEAR = 12;
+    public final static byte PERCENT = 100;
+
     private int principal;
     private  float rate;
     private int years;
