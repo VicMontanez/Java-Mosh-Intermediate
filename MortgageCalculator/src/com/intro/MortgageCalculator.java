@@ -9,9 +9,9 @@ public class MortgageCalculator {
 
     private int principal;
     private  float rate;
-    private int years;
+    private byte years;
 
-    public MortgageCalculator(int principal, float rate, int years) {
+    public MortgageCalculator(int principal, float rate, byte years) {
         this.principal = principal;
         this.rate = rate;
         this.years = years;
@@ -19,21 +19,16 @@ public class MortgageCalculator {
 
     public double calculateMortgage() {
         float monthlyRate = getMonthlyRate();
-        short paymentNumber = (short)(MONTHS_IN_YEAR * years);
+        float paymentNumber = getPaymentNumber();
 
         double mortgage = principal * (monthlyRate * Math.pow(1 + monthlyRate, paymentNumber) / (Math.pow(1 + monthlyRate, paymentNumber) - 1));
 
         return mortgage;
     }
 
-    private float getMonthlyRate() {
-        return rate / PERCENT / MONTHS_IN_YEAR;
-    }
-
-
     public double paymentSchedule(short numberOfPaymentsMade) {
             float monthlyRate = getMonthlyRate();
-            short paymentNumber = (short)(MONTHS_IN_YEAR * years);
+            float paymentNumber = MONTHS_IN_YEAR * years;
 
 
         double payments = principal * (Math.pow(1 + monthlyRate, paymentNumber) - Math.pow(1 + monthlyRate, numberOfPaymentsMade))/ (Math.pow(1 + monthlyRate, numberOfPaymentsMade) - 1);
@@ -41,6 +36,15 @@ public class MortgageCalculator {
         return payments;
 
     }
+
+    private int getPaymentNumber() {
+        return MONTHS_IN_YEAR * years;
+    }
+
+    private float getMonthlyRate() {
+        return rate / PERCENT / MONTHS_IN_YEAR;
+    }
+
 
     public int getYears() {
         return years;
