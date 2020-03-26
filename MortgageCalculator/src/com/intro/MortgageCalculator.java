@@ -18,7 +18,7 @@ public class MortgageCalculator {
     }
 
     public double calculateMortgage() {
-        float monthlyRate = rate / PERCENT / MONTHS_IN_YEAR;
+        float monthlyRate = getMonthlyRate();
         short paymentNumber = (short)(MONTHS_IN_YEAR * years);
 
         double mortgage = principal * (monthlyRate * Math.pow(1 + monthlyRate, paymentNumber) / (Math.pow(1 + monthlyRate, paymentNumber) - 1));
@@ -26,10 +26,13 @@ public class MortgageCalculator {
         return mortgage;
     }
 
+    private float getMonthlyRate() {
+        return rate / PERCENT / MONTHS_IN_YEAR;
+    }
 
 
-        public double paymentSchedule(short numberOfPaymentsMade) {
-            float monthlyRate = rate / PERCENT / MONTHS_IN_YEAR;
+    public double paymentSchedule(short numberOfPaymentsMade) {
+            float monthlyRate = getMonthlyRate();
             short paymentNumber = (short)(MONTHS_IN_YEAR * years);
 
 
