@@ -1,6 +1,16 @@
 package com.intro;
 
 public class MortgageCalculator {
+    private int principal;
+    private  float rate;
+    private int years;
+
+    public MortgageCalculator(int principal, float rate, int years) {
+        this.principal = principal;
+        this.rate = rate;
+        this.years = years;
+    }
+
     public static double calculateMortgage(int principal,
                                            float rate,
                                            int years) {
