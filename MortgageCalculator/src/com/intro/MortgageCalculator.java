@@ -28,13 +28,21 @@ public class MortgageCalculator {
 
     public double paymentSchedule(short numberOfPaymentsMade) {
             float monthlyRate = getMonthlyRate();
-            float paymentNumber = MONTHS_IN_YEAR * years;
+            float paymentNumber = getPaymentNumber();
 
 
         double payments = principal * (Math.pow(1 + monthlyRate, paymentNumber) - Math.pow(1 + monthlyRate, numberOfPaymentsMade))/ (Math.pow(1 + monthlyRate, numberOfPaymentsMade) - 1);
 
         return payments;
 
+    }
+
+    public double[] getRemainingBalances() {
+        var balances = new double[getPaymentNumber()];
+        for ( short month = 1; month <= balances.length; month++)
+            balances[month - 1] = paymentSchedule(month);
+
+        return balances;
     }
 
     private int getPaymentNumber() {
