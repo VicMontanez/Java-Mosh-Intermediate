@@ -11,9 +11,7 @@ public class MortgageCalculator {
         this.years = years;
     }
 
-    public static double calculateMortgage(int principal,
-                                           float rate,
-                                           int years) {
+    public double calculateMortgage() {
         float monthlyRate = rate / 100 / 12;
         short paymentNumber = (short)(12 * years);
 
@@ -22,9 +20,10 @@ public class MortgageCalculator {
         return mortgage;
     }
 
-    public static double paymentSchedule(int principal, float rate, int years, short numberOfPaymentsMade) {
         float monthlyRate = rate / 100 / 12;
         short paymentNumber = (short)(12 * years);
+
+        public double paymentSchedule(short numberOfPaymentsMade) {
 
 
 
@@ -32,5 +31,9 @@ public class MortgageCalculator {
 
         return payments;
 
+    }
+
+    public int getYears() {
+        return years;
     }
 }
