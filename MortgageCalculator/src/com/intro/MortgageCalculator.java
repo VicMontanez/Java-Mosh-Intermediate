@@ -4,6 +4,8 @@ public class MortgageCalculator {
     //Principal values between 1K - 1M
     //Interest rate greater than 0 or less than or equal to 30
     //Years  value between 1 and 30
+
+    //Static values
     private final static byte MONTHS_IN_YEAR = 12;
     private final static byte PERCENT = 100;
 
@@ -44,6 +46,8 @@ public class MortgageCalculator {
 
         return balances;
     }
+
+
 
     private int getPaymentNumber() {
         return MONTHS_IN_YEAR * years;
