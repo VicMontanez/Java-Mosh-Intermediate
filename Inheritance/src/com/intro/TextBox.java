@@ -8,6 +8,11 @@ public class Textbox extends UIControl{
         System.out.println("Textbox");
     }
 
+    @Override
+    public void toString() {
+
+    }
+
     public void setText(String text) {this.text = text}
 
     public void clear() { text = ""; }
