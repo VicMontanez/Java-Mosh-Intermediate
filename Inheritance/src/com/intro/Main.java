@@ -3,9 +3,11 @@ package com.intro;
 public class Main {
 
     public static void main(String[] args) {
-        var textBox = new Textbox();
-        textBox.setText("Hello World");
-        System.out.println(textBox);
+        var control = new UIControl(true);
+        show(control);
+    }
 
+    public static void show(UIControl control) {
+        System.out.println(control);
     }
 }
