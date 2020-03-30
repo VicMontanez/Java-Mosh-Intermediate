@@ -9,6 +9,8 @@ public class Main {
     }
 
     public static void show(UIControl control) {
+        var textBox = (TextBox) control;
+        textBox.setText("Hello World");
         System.out.println(control);
     }
 }
