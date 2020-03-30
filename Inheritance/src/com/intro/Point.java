@@ -11,7 +11,10 @@ public class Point {
 
     @Override
     public boolean equals(Object obj) {
-        var other = (Point)obj;
-        return other.x == x && other.y == y;
+        if (!(obj instanceof Point))
+            return false;
+
+            var other = (Point) obj;
+            return other.x == x && other.y == y;
     }
 }
