@@ -9,8 +9,8 @@ public class Textbox extends UIControl{
     }
 
     @Override
-    public void toString() {
-
+    public String toString() {
+        return text;
     }
 
     public void setText(String text) {this.text = text}
