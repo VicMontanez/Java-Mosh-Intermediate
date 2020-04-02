@@ -1,6 +1,6 @@
 package com.intro;
 
-public class TaxCalculator2020 {
+public class TaxCalculator2020 implements TaxCalculator {
     private double taxableIncome;
 
     public TaxCalculator2020(double taxableIncome) {
