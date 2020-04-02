@@ -7,7 +7,8 @@ public class TaxCalculator2020 implements TaxCalculator {
         this.taxableIncome = taxableIncome;
     }
 
+    @Override
     public double calculateTax() {
-        return taxableIncome * 0.3;
+        return taxableIncome * 0.4;
     }
 }
