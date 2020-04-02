@@ -6,4 +6,9 @@ public class TaxReport {
     public TaxReport() {
         calculator = new TaxCalculator(100_000);
     }
+
+    public void show() {
+        var tax = calculator.calculateTax();
+        System.out.println(tax);
+    }
 }
