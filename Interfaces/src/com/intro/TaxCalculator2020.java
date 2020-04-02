@@ -1,9 +1,9 @@
 package com.intro;
 
-public class TaxCalculator {
+public class TaxCalculator2020 {
     private double taxableIncome;
 
-    public TaxCalculator(double taxableIncome) {
+    public TaxCalculator2020(double taxableIncome) {
         this.taxableIncome = taxableIncome;
     }
 
