@@ -1,6 +1,7 @@
 package com.intro;
 
 public class TaxReport {
+
     private TaxCalculator calculator;
 
     public TaxReport(TaxCalculator calculator) {
@@ -11,4 +12,10 @@ public class TaxReport {
         var tax = calculator.calculateTax();
         System.out.println(tax);
     }
+
+    //Setter
+    public void setCalculator(TaxCalculator calculator) {
+        this.calculator = calculator;
+    }
+
 }
